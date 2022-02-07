@@ -22,10 +22,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
-        'date',
+   
     ];
     protected $table = 'users';
-    public $incrementing = false;
     /**
      * The attributes that should be hidden for serialization.
      *

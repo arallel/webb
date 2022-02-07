@@ -67,22 +67,6 @@
 					   {{ $message }}
 				   </div>    
 			   @enderror
-
-				      <div class="col-md-25">
-                        <div class="form-group">
-                    <div class="wrap-input100 validate-input m-b-16" data-validate = "date is required">
-						<input class="input100" type="date"  @error('date') is-invalid @enderror name="date" placeholder="date">
-						<span class="focus-input100"></span>
-					</div>
-                    </div>
-                   </div>
-				   @error('date')
-				   <div class="alert alert-danger mt-2">
-					   {{ $message }}
-				   </div>    
-			   @enderror
-           
-
                    <div class="col-md-25">
                     <div class="form-group">
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
