@@ -22,5 +22,7 @@ Route::get('/', function () {
 Route::get('/dashboard',function(){
    return view('dashboard');
 })->middleware('auth');
-
+Route::get('profil', function () {
+    return view('profile.driver');
+});
 Route::get('redirects','App\Http\Controllers\homecontroller@index')->middleware('auth');

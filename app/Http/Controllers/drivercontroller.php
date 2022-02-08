@@ -13,7 +13,7 @@ class drivercontroller extends Controller
      */
     public function index()
     {
-        return view('profile.driver');
+        return view('driver.Registerdriver');
     }
 
     /**

@@ -46,12 +46,12 @@
                     <a class="nav-link" href="home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="driver">Pofile</a>
+                    <a class="nav-link" href="{{ url('driver') }}">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="blog.html">Blog</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item"></li>
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
                 <li class="nav-item">
@@ -143,7 +143,6 @@
 	 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	 
 	<!-- Main JS -->
-	<script src="home/js/app.min.js "></script>
-	{{-- <script src="//localhost:8080/livereload.js"></script> --}}
+	
 </body>
 </html>

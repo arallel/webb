@@ -9,6 +9,5 @@ class driver extends Model
 {
     use HasFactory;
 
-    protected $table = 'driver_profile';
-    protected $primaryKey = 'id';
+ 
 }
