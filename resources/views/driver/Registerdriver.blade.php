@@ -26,64 +26,59 @@
             <div class="col-md-9 personal-info">
                 <div class="alert alert-info alert-dismissable">
                     <a class="panel-close close" data-dismiss="alert">×</a>
-                    <i class="fa fa-coffee"></i> This is an <strong>.alert</strong>. Use this to show important messages to the user. </div>
+                    <i class="fa fa-coffee"></i> Please fill in your personal data according to the identity card you have!</div>
                 <h3>Personal info</h3>
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">First name:</label>
+                        <label class="col-lg-3 control-label">No. Ktp:</label>
                         <div class="col-lg-8">
                             <input class="form-control" type="text" value="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Last name:</label>
+                        <label class="col-lg-3 control-label">Nama:</label>
                         <div class="col-lg-8">
                             <input class="form-control" type="text" value="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Company:</label>
-                        <div class="col-lg-8">
-                            <input class="form-control" type="text" value="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">Email:</label>
-                        <div class="col-lg-8">
-                            <input class="form-control" type="text" value="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">Time Zone:</label>
+                        <label class="col-lg-3 control-label">Jenis Kelamin:</label>
                         <div class="col-lg-8">
                             <div class="ui-select">
-                                <select id="user_time_zone" class="form-control">
-                                    <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                                    <option value="Alaska">(GMT-09:00) Alaska</option>
-                                    <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                                    <option value="Arizona">(GMT-07:00) Arizona</option>
-                                    <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                                    <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                                    <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                                    <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                                <select id="kelamin">
+                                    <option value="Laki-Laki">Laki-Laki</option>
+                                    <option value="Perempuan">Perempuan</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label">Username:</label>
+                        <label class="col-lg-3 control-label">Tempat/Tanggal Lahir:</label>
+                        <div class="col-lg-4">
+                            <input class="form-control" type="text" value="">
+                            <input type="date" class="form-control" value="tanggal_lahir">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Provinsi:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Kabupaten:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Kecamatan:</label>
                         <div class="col-md-8">
                             <input class="form-control" type="text" value="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label">Password:</label>
-                        <div class="col-md-8">
-                            <input class="form-control" type="password" value="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Confirm password:</label>
+                        <label class="col-md-3 control-label">Alamat:</label>
                         <div class="col-md-8">
                             <input class="form-control" type="password" value="">
                         </div>
