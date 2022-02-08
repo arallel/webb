@@ -22,6 +22,19 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        // 'no_ktp',
+        // 'file',
+        // 'uid',
+        // 'sebelumspeed',
+        // 'sesudahspeed',
+        // 'gender',
+        // 'tempat_lahir',
+        // 'tanggal_lahir',
+        //  'provinsi',
+        // 'kabupaten',
+        // 'kecamatan',
+        //  'alamat',
+       
    
     ];
     protected $table = 'users';
