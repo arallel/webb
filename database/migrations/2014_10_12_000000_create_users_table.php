@@ -18,9 +18,7 @@ class CreateUsersTable extends Migration
             $table->char('no_ktp')->unique()->nullable();
             $table->string('file')->nullable();
             $table->char('uid')->nullable();
-            $table->char('sebelumspeed')->nullable();
-            $table->char('sesudahspeed')->nullable();
-            $table->string('name')->nullable();
+            $table->string('name');
             $table->string('gender')->nullable();
             $table->string('tempat_lahir')->nullable();
             $table->date('tanggal_lahir')->nullable();
