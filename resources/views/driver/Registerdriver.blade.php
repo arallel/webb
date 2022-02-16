@@ -15,33 +15,48 @@
         <hr>
         <div class="row">
             <!-- left column -->
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="text-center">
                     <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
                     <h6>Upload a different photo...</h6>
                     <input type="file" class="form-control">
                 </div>
-            </div>
+            </div> --}}
             <!-- edit form column -->
             <div class="col-md-9 personal-info">
                 <div class="alert alert-info alert-dismissable">
                     <a class="panel-close close" data-dismiss="alert">×</a>
                     <i class="fa fa-coffee"></i> Please fill in your personal data according to the identity card you have!</div>
                 <h3>Personal info</h3>
-                <form class="form-horizontal" role="form">
+                <form action="{{ Route('driver.update') }}" method="POST">
+                    @csrf
+                    @method('patch')
+        
                     <div class="form-group">
                         <label class="col-lg-3 control-label">No. Ktp:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" type="text" value="">
+                            <input class="form-control @error('no_ktp') is-invalid @enderror" name="no_ktp" type="text" placeholder="Nomer Ktp">
+                            	
+					@error('no_ktp')
+                    <div class="alert alert-danger mt-2">
+                        <strong>{{ $message }}</strong>
+                    </div>
+                    @enderror
                         </div>
                     </div>
-                    <div class="form-group">
+                   <div class="form-group">
                         <label class="col-lg-3 control-label">Nama:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" type="text" value="">
+                            <input class="form-control @error('name') is-invalid @enderror" type="text" name="name"value="{{ old('name') ?? auth()->user()->name }}">
+                       	
+					@error('name')
+                    <div class="alert alert-danger mt-2">
+                        <strong>{{ $message }}</strong>
+                    </div>
+                    @enderror
                         </div>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label class="col-lg-3 control-label">Jenis Kelamin:</label>
                         <div class="col-lg-8">
                             <div class="ui-select">
@@ -82,11 +97,11 @@
                         <div class="col-md-8">
                             <input class="form-control" type="password" value="">
                         </div>
-                    </div>
+                    </div>  --}}
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-8">
-                            <input type="button" class="btn btn-primary" value="Save Changes">
+                            <input type="submit" class="btn btn-primary" value="Save Changes">
                             <span></span>
                             <input type="reset" class="btn btn-default" value="Cancel">
                         </div>

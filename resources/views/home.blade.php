@@ -46,7 +46,7 @@
                     <a class="nav-link" href="home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('driver') }}">Profile</a>
+                    <a class="nav-link" href="{{ url('user') }}">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="blog.html">Blog</a>
@@ -59,10 +59,10 @@
                         <span class="lnr lnr-magnifier"></span>
                     </a>
                 </li>
-                <a href="{{ route('logout') }}" style="cursor: pointer" onclick="event.preventDefault();
+                {{-- <a href="{{ route('logout') }}" style="cursor: pointer" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="btn btn-md btn-primary">LOGOUT</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> --}}
+                    <a href="{{ Router('logout') }}" class="btn btn-md btn-primary">LOGOUT</a>
                 </form>
                  <li class="nav-item only-desktop">
                     <a class="nav-link" id="side-nav-open" href="#">

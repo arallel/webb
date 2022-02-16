@@ -22,7 +22,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
-        // 'no_ktp',
+        'no_ktp',
         // 'file',
         // 'uid',
         // 'sebelumspeed',

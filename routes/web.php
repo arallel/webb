@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homecontroller;
 use App\Http\Controllers\drivercontroller;
+use App\Http\Controllers\logoutcontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,14 +16,27 @@ use App\Http\Controllers\drivercontroller;
 */
 
 
-Route::resource('driver',drivercontroller::class);
+// Route::resource('driver',drivercontroller::class);
 Route::get('/', function () {
     return view('auth.login');
 });
-Route::get('/dashboard',function(){
-   return view('dashboard');
-})->middleware('auth');
-Route::get('profil', function () {
-    return view('profile.driver');
+Route::post('logout', [logoutcontroller::class, 'logout'])->name('logout') ;
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard',function(){
+        return view('dashboard'); 
+    });
+     Route::get('profil', function () {
+         return view('profile.driver');
+     });
+     Route::get('user', function () {
+        return view('driver.Registerdriver');
+    });
+     Route::get('home', function () {
+        return view('home');
+    });
+    Route::get('profile', 'drivercontroller@edit')->name('driver.edit');
+    Route::patch('profile', 'drivercontroller@update')
+        ->name('driver.update');
 });
+
 Route::get('redirects','App\Http\Controllers\homecontroller@index')->middleware('auth');

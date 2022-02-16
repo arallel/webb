@@ -15,7 +15,7 @@ class Driverprofil extends Migration
     {
         Schema::create('driver', function (Blueprint $table) {
             $table->increments('id');
-            // $table->char('no_ktp')->unique();
+           $table->char('no_ktp')->unique();
             $table->string('file');
             // $table->char('uid');
             $table->char('sebelumspeed');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class drivercontroller extends Controller
 {
@@ -21,9 +22,28 @@ class drivercontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(array $input)
     {
-        //
+        // Validator::make($input, [
+        //     // 'username' => ['required','string'],
+        //     'name' => ['required', 'string', 'max:255'],
+        //     'email' => [
+        //         'required',
+        //         'string',
+        //         'email',
+        //         'max:255',
+        //         Rule::unique(User::class),
+        //     ],
+        //     'password' => $this->passwordRules(),
+        // ])->validate();
+
+        // return User::create([
+        //     // 'username' => $input['username'],
+        //     'name' => $input['name'],
+        //     'email' => $input['email'],
+        //     'password' => Hash::make($input['password']),
+      
+        // ]);
     }
 
     /**
@@ -34,7 +54,19 @@ class drivercontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validator::make($input, [
+        //     'no_ktp' => 'required',
+        //     ]);
+    
+        //     return User::create([
+        //         // // 'username' => $input['username'],
+        //         // 'name' => $input['name'],
+        //         // 'email' => $input['email'],
+        //         // 'password' => Hash::make($input['password']),
+        //      'no_ktp' => $input['no_ktp'],
+        //     ]);
+        //     return redirect('home');
+        User::create();
     }
 
     /**
@@ -54,9 +86,11 @@ class drivercontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        return view('profile.edit', [
+            'user' => $request->user()
+        ]);
     }
 
     /**
@@ -66,10 +100,14 @@ class drivercontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    public function update(UpdateProfileRequest $request)
+{
+    $request->user()->update(
+        $request->all()
+    );
+
+    return redirect()->route('profile.driver');
+}
 
     /**
      * Remove the specified resource from storage.

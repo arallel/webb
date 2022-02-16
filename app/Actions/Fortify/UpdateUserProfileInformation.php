@@ -20,7 +20,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
-
+            "no_ktp" => ['required'],
             'email' => [
                 'required',
                 'string',
@@ -36,6 +36,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         } else {
             $user->forceFill([
                 'name' => $input['name'],
+                'no_ktp' => $input['no_ktp'],
                 'email' => $input['email'],
             ])->save();
         }
@@ -53,6 +54,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         $user->forceFill([
             'name' => $input['name'],
             'email' => $input['email'],
+            'no_ktp' => $input['no_ktp'],
             'email_verified_at' => null,
         ])->save();
 
