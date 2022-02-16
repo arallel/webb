@@ -28,9 +28,9 @@
                     <a class="panel-close close" data-dismiss="alert">×</a>
                     <i class="fa fa-coffee"></i> Please fill in your personal data according to the identity card you have!</div>
                 <h3>Personal info</h3>
-                <form action="{{ Route('driver.update') }}" method="POST">
+                <form action="{{ Route('user-profile-information.update') }}" method="POST">
                     @csrf
-                    @method('patch')
+                    @method('PUT')
         
                     <div class="form-group">
                         <label class="col-lg-3 control-label">No. Ktp:</label>
@@ -47,9 +47,21 @@
                    <div class="form-group">
                         <label class="col-lg-3 control-label">Nama:</label>
                         <div class="col-lg-8">
-                            <input class="form-control @error('name') is-invalid @enderror" type="text" name="name"value="{{ old('name') ?? auth()->user()->name }}">
+                            <input class="form-control @error('name') is-invalid @enderror" type="text" name="name"value="{{auth()->user()->name }}">
                        	
 					@error('name')
+                    <div class="alert alert-danger mt-2">
+                        <strong>{{ $message }}</strong>
+                    </div>
+                    @enderror
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">email:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" value="{{auth()->user()->email }}">
+                       	
+					@error('email')
                     <div class="alert alert-danger mt-2">
                         <strong>{{ $message }}</strong>
                     </div>
@@ -103,7 +115,8 @@
                         <div class="col-md-8">
                             <input type="submit" class="btn btn-primary" value="Save Changes">
                             <span></span>
-                            <input type="reset" class="btn btn-default" value="Cancel">
+                            {{-- <input type="reset" class="btn btn-default" value="Cancel"> --}}
+                            <a href="{{ url()->previous() }}">back</a>
                         </div>
                     </div>
                 </form>

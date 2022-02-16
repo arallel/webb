@@ -66,7 +66,14 @@ class drivercontroller extends Controller
         //      'no_ktp' => $input['no_ktp'],
         //     ]);
         //     return redirect('home');
-        User::create();
+        // User::create();
+        $request->validate([
+            'no_ktp' => 'required',
+            'name' => 'required',
+        ]);
+        User::create($request->all());
+
+        return redirect()->route('user')->with('succes','Data Berhasil di Input');
     }
 
     /**
@@ -100,13 +107,15 @@ class drivercontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProfileRequest $request)
+    public function update(UpdateProfileRequest $request, User $user)
 {
-    $request->user()->update(
-        $request->all()
-    );
+    $request->validate([
+        'no_ktp' => 'required',
+        'name' => 'required',
+    ]);
+    $user->update($request->all());
 
-    return redirect()->route('profile.driver');
+    return redirect()->route('user')->with('succes','Data Berhasil di Input');
 }
 
     /**

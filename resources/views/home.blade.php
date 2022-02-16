@@ -61,8 +61,14 @@
                 </li>
                 {{-- <a href="{{ route('logout') }}" style="cursor: pointer" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="btn btn-md btn-primary">LOGOUT</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> --}}
-                    <a href="{{ Router('logout') }}" class="btn btn-md btn-primary">LOGOUT</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">  
+                </form> --}}
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  class="btn btn-md btn-primary">
+                    Logout
+                </a>
+                
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
                 </form>
                  <li class="nav-item only-desktop">
                     <a class="nav-link" id="side-nav-open" href="#">

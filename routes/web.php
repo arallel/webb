@@ -34,9 +34,12 @@ Route::group(['middleware' => 'auth'], function () {
      Route::get('home', function () {
         return view('home');
     });
-    Route::get('profile', 'drivercontroller@edit')->name('driver.edit');
-    Route::patch('profile', 'drivercontroller@update')
-        ->name('driver.update');
+//     Route::get('profile', 'drivercontroller@edit')->name('driver.edit');
+//     Route::patch('profile', 'drivercontroller@update')
+//         ->name('driver.update');
+    Route::get('profile',App\Http\Controllers\User\profile::class)->name('profile');
+        
+   
 });
 
 Route::get('redirects','App\Http\Controllers\homecontroller@index')->middleware('auth');
